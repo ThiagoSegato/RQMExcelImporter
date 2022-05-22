@@ -3,9 +3,6 @@ import zipfile
 import xml.etree.ElementTree as ET
 import pandas as pd
 
-ns16 = 'http://jazz.net/xmlns/alm/qm/v0.1/executionresult/v0.1'
-xhtml = 'http://www.w3.org/1999/xhtml'
-
 def convert(rqmsFile, outputFile='result'):
     try:
         with zipfile.ZipFile(rqmsFile, 'r') as ref:
@@ -14,6 +11,8 @@ def convert(rqmsFile, outputFile='result'):
                 name = ''
                 data = []
                 ter = {}
+                ns16 = '{http://jazz.net/xmlns/alm/qm/v0.1/executionresult/v0.1}'
+                xhtml = '{http://www.w3.org/1999/xhtml}'
 
                 for l in f1:
                     k,v = l.decode('utf8').partition("=")[::2]
@@ -30,7 +29,7 @@ def convert(rqmsFile, outputFile='result'):
                     data.append(((i + 1), descriptionStr, expectedResultStr))
 
                 df = pd.DataFrame(data, columns=['Order', 'Description', 'ExpectedResult'])
-                print("Converting...: ", name)
+                print("Converting...", "\n", name)
                 df.to_excel(outputFile + '.xlsx')
 
     except FileNotFoundError:
@@ -41,3 +40,4 @@ def convert(rqmsFile, outputFile='result'):
 
     except Exception as error:
         print('---> Exception Error!', error)
+        raise error

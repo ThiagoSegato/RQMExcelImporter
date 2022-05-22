@@ -1,2 +1,11 @@
-dist/*
-src/RQMExcelImporter.egg-info
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/src/*.egg-info
+
+# Excel files
+*.xlsx

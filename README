@@ -2,10 +2,23 @@
 Extracts items from the test plan. 
 
 This project was based on:
-IBM Engineering Test Management (ETM) Excel/Word Importer Utility 
-https://jazz.net/wiki/bin/view/Main/RQMExcelWordImporter
+[IBM Engineering Test Management (ETM) Excel/Word Importer Utility](https://jazz.net/wiki/bin/view/Main/RQMExcelWordImporter)
 
-### Steps to create that package
+### Steps to test locally with two example files
+
+1. Create environment using virtualenv
+
+`virtualenv venv`
+
+2. Install all the packages necessary
+
+`pip install -r requirements.txt`
+
+3. Run tests
+
+`python -m unittest tests.test_RQMExcelImporter`
+
+### Steps to create that package and distribute to PyPI
 
 1. Install package to globally way if not installed already
 
