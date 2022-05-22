@@ -4,7 +4,14 @@ Extracts items from the test plan.
 This project was based on:
 [IBM Engineering Test Management (ETM) Excel/Word Importer Utility](https://jazz.net/wiki/bin/view/Main/RQMExcelWordImporter)
 
-### Steps to test locally with two example files
+### How to use
+
+.. code-block:: bash
+$ pip install RQMExcelImporter
+>>> import RQMExcelImporter
+>>> RQMExcelImporter.convert('your_rqms_file')
+
+### Steps to test source code locally with two example files
 
 1. Create environment using virtualenv
 
