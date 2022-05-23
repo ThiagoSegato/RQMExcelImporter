@@ -6,10 +6,10 @@ This project was based on:
 
 ### How to use
 
-.. code-block:: bash
-$ pip install RQMExcelImporter
->>> import RQMExcelImporter
->>> RQMExcelImporter.convert('your_rqms_file')
+    
+    $ pip install RQMExcelImporter
+    >>> import RQMExcelImporter  
+    >>> RQMExcelImporter.convert('your_rqms_file')
 
 ### Steps to test source code locally with two example files
 
